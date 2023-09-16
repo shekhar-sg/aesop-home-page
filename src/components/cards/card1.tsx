@@ -3,7 +3,7 @@ import {East} from "@mui/icons-material";
 
 interface CardProps {
     data: {
-        heading: string,
+        heading?: string,
         title: string,
         subtitle: string,
         button: string,
