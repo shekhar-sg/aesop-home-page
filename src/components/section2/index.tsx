@@ -16,7 +16,7 @@ const Section2 = () => {
         hoverColor: "white",
         width: "435px",
         font: "13px",
-        margin: 0
+        margin: "0"
     }
     // const card_2_Data = {
     //     title: "Title",

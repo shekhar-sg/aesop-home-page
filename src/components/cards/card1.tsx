@@ -11,7 +11,7 @@ interface CardProps {
         hoverColor?:string,
         width?: string,
         font?:string,
-        margin?:number
+        margin?:string
     }
 }
 
