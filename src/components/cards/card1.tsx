@@ -2,45 +2,54 @@ import {Button, Card, CardActions, CardContent, CardHeader, Typography} from "@m
 import {East} from "@mui/icons-material";
 
 interface CardProps {
-    heading: string,
-    title: string,
-    subtitle: string,
-    button: string
+    data: {
+        heading: string,
+        title: string,
+        subtitle: string,
+        button: string,
+        color?: string,
+        hoverColor?:string,
+        width?: string,
+        font?:string,
+        margin?:number
+    }
 }
 
-const CardComponent = (props: CardProps) => {
-    const {heading, button, subtitle, title} = props;
+const Card1 = (props: CardProps) => {
+    const {data} = props;
+    const {heading, button, subtitle, title,color,hoverColor, width,font,margin} = data;
     return (
         <>
             <Card sx={{
                 background: "transparent",
                 boxShadow: "none",
-                color: "white",
-                width: "30%",
-                margin: "62px 0 152px 0"
+                color: `${color}`,
+                width: `${width}`,
+                margin: `${margin}`
             }}>
                 <CardHeader title={heading}
                             titleTypographyProps={{variant: "subtitle2"}}
                             sx={{py: 0}}/>
                 <CardContent>
                     <Typography sx={{fontSize: "30px", marginBottom: "13px", lineHeight: "normal"}}>{title}</Typography>
-                    <Typography variant={"subtitle1"}>{subtitle}</Typography>
+                    <Typography variant={"subtitle1"} sx={{fontSize:`${font}`}}>{subtitle}</Typography>
                 </CardContent>
                 <CardActions>
                     <Button variant={"outlined"}
                             sx={{
                                 background: "transparent",
-                                color: "White",
+                                color: `${color}`,
                                 textTransform: "none",
                                 fontWeight: "400",
-                                border: "1px solid white",
+                                border: `1px solid ${color}`,
                                 padding: "16px 24px",
                                 borderRadius: 0,
+                                marginLeft: "8px",
 
                                 "&:hover": {
-                                    background: "white",
-                                    border: "1px solid white",
-                                    color: "Black"
+                                    background: `${color}`,
+                                    border: `1px solid ${color}`,
+                                    color: `${hoverColor}`
                                 }
                             }}>
                         {button}
@@ -52,4 +61,4 @@ const CardComponent = (props: CardProps) => {
     );
 };
 
-export default CardComponent;
+export default Card1;
