@@ -1,60 +1,108 @@
-import {Button, Card, CardActions, CardContent, CardHeader, Typography} from "@mui/material";
+import {
+    Button,
+    ButtonProps,
+    Card,
+    CardActions,
+    CardContent,
+    CardHeader,
+    CardHeaderProps,
+    CardProps,
+    Typography,
+    TypographyProps
+} from "@mui/material";
 import {East} from "@mui/icons-material";
 
-interface CardProps {
+export interface Card1Props extends Omit<CardProps, 'children'> {
     data: {
         heading?: string,
         title: string,
         subtitle: string,
         button: string,
-        color?: string,
-        hoverColor?:string,
-        width?: string,
-        font?:string,
-        margin?:string
     }
+    CardHeaderProps?: Omit<CardHeaderProps, 'children'>,
+    SubtitleProps?: Omit<TypographyProps, 'children'>,
+    ButtonProps?: Omit<ButtonProps, 'children'>,
 }
 
-const Card1 = (props: CardProps) => {
-    const {data} = props;
-    const {heading, button, subtitle, title,color,hoverColor, width,font,margin} = data;
+const Card1 = (props: Card1Props) => {
+    const {data, CardHeaderProps, SubtitleProps, ButtonProps, sx, ...restCardProps} = props;
+    const {heading, button, subtitle, title} = data;
+
+
     return (
         <>
-            <Card sx={{
-                background: "transparent",
-                boxShadow: "none",
-                color: `${color}`,
-                width: `${width}`,
-                margin: `${margin}`
-            }}>
-                <CardHeader title={heading}
-                            titleTypographyProps={{variant: "subtitle2"}}
-                            sx={{py: 0}}/>
-                <CardContent>
-                    <Typography sx={{fontSize: "30px", marginBottom: "13px", lineHeight: "normal"}}>{title}</Typography>
-                    <Typography variant={"subtitle1"} sx={{fontSize:`${font}`}}>{subtitle}</Typography>
+            <Card
+                sx={[
+                    {
+                        background: "transparent",
+                        boxShadow: "none",
+                        height: "fit-content",
+                        '*': {
+                            color: 'inherit',
+                            borderColor: 'inherit'
+                        }
+                    },
+                    ...(Array.isArray(sx) ? sx : [sx])
+                ]}
+                {...restCardProps}
+            >
+                <CardHeader
+                    title={heading}
+                    titleTypographyProps={{
+                        variant: "subtitle2",
+                        color: "inherit",
+                        mb: '15px',
+                        ...(CardHeaderProps?.titleTypographyProps && CardHeaderProps?.titleTypographyProps)
+                    }}
+                    subheader={title}
+                    subheaderTypographyProps={{
+                        color: "inherit",
+                        fontSize: "30px",
+                        lineHeight: "normal",
+                        ...(CardHeaderProps?.subheaderTypographyProps && CardHeaderProps?.subheaderTypographyProps)
+                    }}
+                    sx={[
+                        {
+                            py: 0,
+                        },
+                        ...(CardHeaderProps ? Array.isArray(CardHeaderProps?.sx) ? CardHeaderProps?.sx : [CardHeaderProps?.sx] : [])
+                    ]}
+                    {...CardHeaderProps}
+                />
+                <CardContent
+                    sx={{
+                        color: "inherit",
+                    }}
+                >
+                    <Typography variant={"subtitle1"} color={"inherit"} {...SubtitleProps}>
+                        {subtitle}
+                    </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions
+                    color={"inherit"}
+                >
                     <Button variant={"outlined"}
-                            sx={{
+                            {...ButtonProps}
+                            sx={[{
+                                color: "inherit",
                                 background: "transparent",
-                                color: `${color}`,
                                 textTransform: "none",
                                 fontWeight: "400",
-                                border: `1px solid ${color}`,
                                 padding: "16px 24px",
                                 borderRadius: 0,
                                 marginLeft: "8px",
-
-                                "&:hover": {
-                                    background: `${color}`,
-                                    border: `1px solid ${color}`,
-                                    color: `${hoverColor}`
+                                borderColor: "currentColor",
+                                '&:hover': {
+                                    background: "white",
+                                    borderColor: "white",
+                                    color: "black",
                                 }
-                            }}>
-                        {button}
-                        <East sx={{marginLeft: "78px", fontSize: "16px"}}/>
-                    </Button>
+                            },
+                                ...(ButtonProps ? Array.isArray(ButtonProps?.sx) ? ButtonProps?.sx : [ButtonProps?.sx] : [])
+                            ]}
+                            endIcon={<East sx={{marginLeft: "78px", fontSize: "16px"}}
+                            />}
+                    >{button}</Button>
                 </CardActions>
             </Card>
         </>
