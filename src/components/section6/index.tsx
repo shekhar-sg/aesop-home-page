@@ -32,12 +32,12 @@ const Section6 = () => {
                 loop
                 scrollbar={true}
                 modules={[Scrollbar]}
-                style={{width: "1107px", height: "630px", margin: 0, objectFit: "cover"}}
+                style={{width: "60%", height: "auto", margin: 0}}
             >
                 {
                     images.map((image, index) => {
                         return (
-                            <SwiperSlide key={index} style={{width: "auto", margin: 0}}>
+                            <SwiperSlide key={index} style={{width: "100%", margin: 0}}>
                                 <img src={image} alt={"image"}
                                      style={{width: "100%", height: "100%", objectFit: "cover"}}/>
                             </SwiperSlide>

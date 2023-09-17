@@ -1,4 +1,4 @@
-import {Stack} from "@mui/material";
+import {Box, Stack} from "@mui/material";
 import Card1 from "@/src/components/cards/card1";
 
 const Section3 = () => {
@@ -10,13 +10,22 @@ const Section3 = () => {
         color: "black",
         hoverColor: "white",
         font: "16px",
-        width: "598px",
+        width: "30%",
+        margin:"36px",
+        responsiveWidth: {
+            xl: "30%",
+            lg: "40%",
+            md: "700%",
+        }
     }
     const picture = "https://www.aesop.com/u1nb1km7t5q7/7tPk6zFo84MiOR6dy8WNAg/1f71197de94be5fb07cbd03365132775/Aesop-Parsley-Seed-Performance-Campaign-2020-Hybris-Homepage-Secondary-1-Mid-Desktop-1690x1185px.jpg"
     return (
-        <Stack sx={{paddingTop: "150px",flexDirection:"row",justifyContent:"space-between", marginLeft: "80px"}}>
+        <Stack
+            sx={{paddingTop: "150px", flexDirection: {xl: "row", lg: "row", md: "column"}, justifyContent: {xl: "space-between", lg: "space-between", md: "center"}, marginLeft: "80px", gap: {md: 4}}}>
             <Card1 data={card_1_Data}/>
-            <img src={picture} alt={""} width={1110} height={775} style={{marginLeft:"auto"}}/>
+            <Box sx={{width:{xl:"60%", md:"100%"}}}>
+                <img src={picture} alt={""} width={"100%"} height={"auto"}/>
+            </Box>
         </Stack>
     );
 };

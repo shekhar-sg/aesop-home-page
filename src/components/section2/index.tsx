@@ -60,7 +60,7 @@ const Section2 = () => {
     ];
 
     return (
-        <Box sx={{paddingTop:"150px"}}>
+        <Box sx={{paddingTop:"150px", width:"100%"}}>
             <Swiper
                 slidesPerView={"auto"}
                 scrollbar={true}
