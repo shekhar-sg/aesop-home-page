@@ -23,17 +23,17 @@ const Section1 = () => {
             <Card1 {...card1Props} sx={{
                 backgroundColor: "brown",
             }}
-            ButtonProps={{
-                fullWidth: true,
-                sx:{
-                    color: "white",
-                    borderColor: "white",
-                    '&:hover':{
-                        color: "brown",
-                        backgroundColor: "white",
-                    }
-                }
-            }}
+                   ButtonProps={{
+                       fullWidth: true,
+                       sx: {
+                           color: "white",
+                           borderColor: "white",
+                           '&:hover': {
+                               color: "brown",
+                               backgroundColor: "white",
+                           }
+                       }
+                   }}
             />
         </>
     );
