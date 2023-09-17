@@ -31,7 +31,6 @@ const Utils = (props:UtilsProps) => {
                         )
                     })
                 }
-                {/*<Typography variant={"body1"}></Typography>*/}
             </Stack>
         </>
     );
