@@ -99,7 +99,7 @@ const Navbar = () => {
                                     <Search/>
                                 </IconButton>
                             </Stack> :
-                            <Stack sx={{flexDirection: "row", gap: 0.5}}>
+                            <Stack sx={{flexDirection: "row", width:{sm:"fit-content",xs:"100%"},gap: 0.5}}>
                                 <IconButton
                                     disableTouchRipple={true}
                                     onClick={() => setIsDrawerOpen(true)}
@@ -128,7 +128,7 @@ const Navbar = () => {
                                     })
                                 }
                                 <IconButton
-                                    sx={{textTransform: "none", color: "black", fontSize: "15px", fontWeight: "400"}}>
+                                    sx={{textTransform: "none", color: "black", marginLeft:"auto",fontSize: "15px", fontWeight: "400"}}>
                                     <Search/>
                                 </IconButton>
                             </Stack>
