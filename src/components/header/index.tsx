@@ -27,8 +27,6 @@ const Navbar = () => {
             <AppBar sx={{boxShadow: "none"}}>
                 <Toolbar
                     sx={{background: "white", minHeight: "64px", padding: "10px 24px", justifyContent: "space-between"}}>
-                    {
-                        isDrawerOpen &&
                         <Drawer
                             anchor="left"
                             open={isDrawerOpen}
@@ -77,7 +75,6 @@ const Navbar = () => {
                                 }
                             </Stack>
                         </Drawer>
-                    }
                     {
                         isUpLg ?
                             <Stack sx={{flexDirection: "row", gap: 0.5}}>
