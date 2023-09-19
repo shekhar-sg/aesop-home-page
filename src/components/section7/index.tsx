@@ -1,4 +1,4 @@
-import {Stack, Typography} from "@mui/material";
+import {Box, Stack, Typography} from "@mui/material";
 import Card1 from "@/src/components/cards/card1";
 
 const Section7 = () => {
@@ -10,7 +10,9 @@ const Section7 = () => {
                 justifyContent: "space-between",
                 gap: 5
             }}>
-                <img src={imageUrl} alt={"imageUrl"} style={{width: "90%", height: "auto", objectFit: "cover"}}/>
+                <Box sx={{alignSelf: "start", width: {lg: "60%", xs: "90%"}}}>
+                    <img src={imageUrl} alt={"imageUrl"} style={{width: "100%", height: "auto", objectFit: "cover"}}/>
+                </Box>
                 <Card1 data={card_1_data}
                        sx={{
                            paddingLeft: {lg: "80px", sm: "12%", xs: "20px"},
@@ -32,7 +34,14 @@ const Section7 = () => {
                 />
             </Stack>
             <Stack
-                sx={{width: "70%", mx: "auto", justifyContent: "center", alignItems: "center", gap: 3, height: "500px"}}>
+                sx={{
+                    width: "70%",
+                    mx: "auto",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: 3,
+                    height: "500px"
+                }}>
                 <Typography variant={"h4"} sx={{textAlign: "center"}}>‘Nothing is ever ended, everything only
                     begun.’</Typography>
                 <Typography variant={"body1"}>Sara Teasdale</Typography>
