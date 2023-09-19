@@ -1,4 +1,4 @@
-import {Box, Divider, Stack, Typography} from "@mui/material";
+import {Divider, Stack, Typography} from "@mui/material";
 
 interface UtilsProps {
     data: {
@@ -15,18 +15,24 @@ interface UtilsProps {
 }
 
 
-const Utils = (props:UtilsProps) => {
+const Utils = (props: UtilsProps) => {
     const {data} = props
     const {title, links} = data
     return (
         <>
-            <Stack sx={{width: "331px", height: "273px", gap:1.5}}>
+            <Stack sx={{width: {sm: "30%", xs: "44%"}, height: "273px", gap: 0.5}}>
                 <Typography variant={"body1"}>{title}</Typography>
-                <Divider sx={{margin: "24px 0", width: "100%", borderColor: "white"}}/>
+                <Divider sx={{margin: "16px 0", width: "100%", borderColor: "white"}}/>
                 {
                     Object.values(links).map((link, index) => {
                         return (
-                            <Typography key={index} sx={{cursor: "pointer", width: "fit-content"}}
+                            <Typography key={index}
+                                        sx={{
+                                            cursor: "pointer",
+                                            // fontSize: {sm: "inherit", xs: "11px"},
+                                            lineHeight: "24px",
+                                            width: "fit-content"
+                                        }}
                                         variant={"body1"}>{link}</Typography>
                         )
                     })

@@ -10,7 +10,7 @@ import Footer from "@/src/components/footer";
 
 export default function Home() {
     return (
-        <main style={{marginTop: "81px"}}>
+        <main style={{marginTop: "84px"}}>
             <Section1/>
             <Section2/>
             <Section3/>

@@ -96,11 +96,11 @@ const Card1 = (props: Card1Props) => {
                                     background: "white",
                                     borderColor: "white",
                                     color: "black",
-                                }
+                                },
                             },
                                 ...(ButtonProps ? Array.isArray(ButtonProps?.sx) ? ButtonProps?.sx : [ButtonProps?.sx] : [])
                             ]}
-                            endIcon={<East sx={{marginLeft: "78px", fontSize: "16px"}}
+                            endIcon={<East sx={{fontSize: "16px"}}
                             />}
                     >{button}</Button>
                 </CardActions>
