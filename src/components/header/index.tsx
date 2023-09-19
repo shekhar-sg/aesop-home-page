@@ -133,7 +133,7 @@ const Navbar = () => {
                                 </IconButton>
                             </Stack>
                     }
-                    <Stack sx={{flexDirection: "row", gap: 0.5}}>
+                    <Stack sx={{flexDirection: "row", gap: 0.5,display: {sm: "flex",xs:"none"}}}>
                         {
                             user.map((option, index) => {
                                 return (
