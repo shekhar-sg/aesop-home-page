@@ -17,9 +17,7 @@ import {useState} from "react";
 
 const Navbar = () => {
 
-    const trigger = useScrollTrigger({
-        target: window ? window : undefined,
-    });
+    const trigger = useScrollTrigger();
     const theme = useTheme()
     const isUpLg = useMediaQuery(theme.breakpoints.up("lg"))
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
